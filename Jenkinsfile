@@ -3,22 +3,11 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        parallel(
-          "build": {
-            sh '''#! /bin/sh
+        sh '''#! /bin/sh
 
 echo "build...."
 
 exit 0'''
-            
-          },
-          "build2": {
-            sh '''#! /bin/sh
-
-echo "build2 ....."'''
-            
-          }
-        )
       }
     }
     stage('test') {
@@ -38,6 +27,10 @@ exit 0'''
 echo "test2 ..."
 
 exit 0'''
+            
+          },
+          "test3": {
+            echo 'test3 ....'
             
           }
         )
